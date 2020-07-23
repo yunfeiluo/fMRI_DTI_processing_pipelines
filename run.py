@@ -9,21 +9,17 @@ import os
 import nipype.interfaces.io as nio
 import nipype.pipeline.engine as pe
 
-from pipelines.spm_normal.pipeline import pipeline as pipeline0
-from pipelines.FuNP.pipeline import pipeline as pipeline1
+from pipelines.FuNP.pipeline import pipeline as FuNP_pipeline
 
 if __name__ == '__main__':
     # specify subject names, and pipeline name
     subjects = ['sub001']
     pipeline_name = 'FuNP'
-    pl = pipeline1
-    #pipeline_name = 'spm_normal'
-    #pl = pipeline0
+    pl = FuNP_pipeline
 
     # specify directories, and data template
     experiment_dir = "tasks/flanker_task/" # specify the root folder for tasks
     output_dir = experiment_dir + "output/" + pipeline_name + "/"
-    working_dir = experiment_dir + "tmp/"+ pipeline_name + "/"
 
     # run pipelines on subjects
     for subject in subjects:
@@ -46,7 +42,6 @@ if __name__ == '__main__':
         pipeline = pl(
             experiment_dir=experiment_dir,
             output_dir = output_dir,
-            working_dir = working_dir,
             func_source = func_in,
             struct_source = struct_in,
             datasink = datasink
