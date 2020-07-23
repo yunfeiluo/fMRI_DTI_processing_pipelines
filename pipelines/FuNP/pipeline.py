@@ -10,10 +10,9 @@ import nipype.pipeline.engine as pe
 from nipype.interfaces.utility import Function
 
 class pipeline:
-    def __init__(self, experiment_dir, output_dir, working_dir, func_source, struct_source, datasink):
+    def __init__(self, experiment_dir, output_dir, func_source, struct_source, datasink):
         self.experiment_dir = experiment_dir
         self.output_dir = output_dir
-        self.working_dir = working_dir
 
         # specify input and output nodes
         self.func_source = func_source
@@ -105,10 +104,10 @@ class pipeline:
             (self.struct_source, self.refit_struct, [('outfiles', 'in_file')]),
             (self.refit_struct, self.resample_struct, [('out_file', 'in_file')]),
             (self.resample_struct, self.bet_struct, [('out_file', 'in_file')]),
-            #(self.func_source, self.refit_func, [('outfiles', 'in_file')]),
-            #(self.refit_func, self.resample_func, [('out_file', 'in_file')]),
-            #(self.resample_func, self.slice_timer, [('out_file', 'in_file')]),
-            (self.func_source, self.slice_timer, [('outfiles', 'in_file')]),
+            (self.func_source, self.refit_func, [('outfiles', 'in_file')]),
+            (self.refit_func, self.resample_func, [('out_file', 'in_file')]),
+            (self.resample_func, self.slice_timer, [('out_file', 'in_file')]),
+            # (self.func_source, self.slice_timer, [('outfiles', 'in_file')]),
             (self.slice_timer, self.mcflirt, [('slice_time_corrected_file', 'in_file')]),
             (self.mcflirt, self.bet_mean, [('mean_img', 'in_file')]),
             (self.mcflirt, self.fslsplit, [('out_file', 'in_file')]),
@@ -120,7 +119,6 @@ class pipeline:
             (self.segment, self.normalize, [('transformation_mat', 'parameter_file')]), 
             (self.fslmerge, self.normalize, [('merged_file', 'apply_to_files')]),
             (self.normalize, self.smooth, [('normalized_files', 'in_files')]),
-            #(self.mcflirt, self.datasink, [('out_file', 'motion_corrected')]),
             (self.coregister, self.datasink, [('coregistered_source', 'registered_file')]),
             (self.normalize, self.datasink, [('normalized_files', 'before_smooth')]),
             (self.smooth, self.datasink, [('smoothed_files', 'final_out')])
