@@ -1,0 +1,20 @@
+digraph workflow{
+  label="workflow";
+  workflow_structual_input_node[label="structual_input_node (io)"];
+  workflow_functional_input_node[label="functional_input_node (io)"];
+  workflow_realign[label="realign (spm)"];
+  workflow_coregister[label="coregister (spm)"];
+  workflow_segment[label="segment (spm)"];
+  workflow_normalize_func[label="normalize_func (spm)"];
+  workflow_smooth[label="smooth (spm)"];
+  workflow_output_node[label="output_node (io)"];
+  workflow_structual_input_node -> workflow_coregister;
+  workflow_functional_input_node -> workflow_realign;
+  workflow_realign -> workflow_coregister;
+  workflow_realign -> workflow_normalize_func;
+  workflow_coregister -> workflow_segment;
+  workflow_segment -> workflow_normalize_func;
+  workflow_normalize_func -> workflow_smooth;
+  workflow_normalize_func -> workflow_output_node;
+  workflow_smooth -> workflow_output_node;
+}

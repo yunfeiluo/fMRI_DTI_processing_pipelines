@@ -1,0 +1,65 @@
+[
+    {
+        "group": 1,
+        "imports": [],
+        "name": "0_structual_input_node",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [],
+        "name": "1_functional_input_node",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "1_functional_input_node"
+        ],
+        "name": "2_realign",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "0_structual_input_node",
+            "2_realign"
+        ],
+        "name": "3_coregister",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "3_coregister"
+        ],
+        "name": "4_segment",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "4_segment",
+            "2_realign"
+        ],
+        "name": "5_normalize_func",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "5_normalize_func"
+        ],
+        "name": "6_smooth",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "5_normalize_func",
+            "6_smooth"
+        ],
+        "name": "7_output_node",
+        "size": 1
+    }
+]
