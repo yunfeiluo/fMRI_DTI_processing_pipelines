@@ -1,0 +1,19 @@
+############################################################
+when do code backup, do not include the "tasks" folder. 
+It is too big and is not necessary.
+This folder contain actaul data and the output results. 
+############################################################
+
+
+run image:
+docker run -it --rm nipype/nipype
+'''
+-it: interaction
+--rm: remove container after running
+'''
+
+mount:
+docker run -it --rm -v mount_folder:/mount_to_which_folder（e.g. /mnt） nipype/nipype
+
+e.g.
+docker run -it --rm -v e:/program/fMRI/dev:/mnt nipype/nipype
