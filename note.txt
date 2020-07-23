@@ -16,4 +16,4 @@ mount:
 docker run -it --rm -v mount_folder:/mount_to_which_folder（e.g. /mnt） nipype/nipype
 
 e.g.
-docker run -it --rm -v e:/program/fMRI/dev:/mnt nipype/nipype
+docker run -it --rm -v e:/program/fMRI_processing_pipelines:/mnt nipype/nipype
