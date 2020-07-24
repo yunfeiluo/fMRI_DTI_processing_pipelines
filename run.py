@@ -12,6 +12,8 @@ import nipype.pipeline.engine as pe
 
 from pipelines.FuNP.pipeline import pipeline as FuNP_pipeline
 
+workflow_plotted = False
+
 # specify subject names, and pipeline name
 subjects = ['sub001', 'sub002', 'sub003']
 pipeline_name = 'FuNP'
@@ -47,7 +49,9 @@ def preprocess(subject):
         datasink = datasink)
 
     # # plot the workflow
-    # pipeline.workflow.write_graph()
+    if not workflow_plotted:
+        pipeline.workflow.write_graph()
+        workflow_plotted = True
 
     # run pipeline
     pipeline.forward(subject)
