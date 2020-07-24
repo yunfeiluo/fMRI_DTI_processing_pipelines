@@ -85,6 +85,7 @@ class pipeline:
         self.coregister.inputs.jobtype = 'estimate'
 
         self.segment = pe.Node(interface=spm.Segment(), name="segment")
+        self.segment.inputs.affine_regularization = 'mni'
 
         self.normalize = pe.Node(interface=spm.Normalize(), name="normalize")
         self.normalize.inputs.jobtype = "write"
@@ -104,10 +105,10 @@ class pipeline:
             (self.struct_source, self.refit_struct, [('outfiles', 'in_file')]),
             (self.refit_struct, self.resample_struct, [('out_file', 'in_file')]),
             (self.resample_struct, self.bet_struct, [('out_file', 'in_file')]),
-            (self.func_source, self.refit_func, [('outfiles', 'in_file')]),
-            (self.refit_func, self.resample_func, [('out_file', 'in_file')]),
-            (self.resample_func, self.slice_timer, [('out_file', 'in_file')]),
-            # (self.func_source, self.slice_timer, [('outfiles', 'in_file')]),
+            # (self.func_source, self.refit_func, [('outfiles', 'in_file')]),
+            # (self.refit_func, self.resample_func, [('out_file', 'in_file')]),
+            # (self.resample_func, self.slice_timer, [('out_file', 'in_file')]),
+            (self.func_source, self.slice_timer, [('outfiles', 'in_file')]),
             (self.slice_timer, self.mcflirt, [('slice_time_corrected_file', 'in_file')]),
             (self.mcflirt, self.bet_mean, [('mean_img', 'in_file')]),
             (self.mcflirt, self.fslsplit, [('out_file', 'in_file')]),
