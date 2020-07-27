@@ -46,8 +46,8 @@ def preprocess(subject):
         struct_source = struct_in, 
         datasink = datasink)
 
-    # # plot the workflow
-    # pipeline.workflow.write_graph()
+    # plot the workflow
+    pipeline.workflow.write_graph()
 
     # run pipeline
     pipeline.forward(subject)
