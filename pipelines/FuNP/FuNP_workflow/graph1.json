@@ -18,27 +18,25 @@
                 12,
                 13,
                 14,
-                15,
-                16,
-                17
+                15
             ],
-            "total": 18
+            "total": 16
         }
     ],
     "links": [
         {
+            "source": 7,
+            "target": 8,
+            "value": 1
+        },
+        {
+            "source": 8,
+            "target": 9,
+            "value": 1
+        },
+        {
             "source": 9,
             "target": 10,
-            "value": 1
-        },
-        {
-            "source": 10,
-            "target": 11,
-            "value": 1
-        },
-        {
-            "source": 11,
-            "target": 12,
             "value": 1
         },
         {
@@ -53,6 +51,11 @@
         },
         {
             "source": 2,
+            "target": 6,
+            "value": 1
+        },
+        {
+            "source": 2,
             "target": 3,
             "value": 1
         },
@@ -63,22 +66,22 @@
         },
         {
             "source": 4,
-            "target": 8,
-            "value": 1
-        },
-        {
-            "source": 4,
             "target": 5,
             "value": 1
         },
         {
-            "source": 5,
-            "target": 6,
+            "source": 10,
+            "target": 11,
             "value": 1
         },
         {
             "source": 6,
-            "target": 7,
+            "target": 11,
+            "value": 1
+        },
+        {
+            "source": 11,
+            "target": 12,
             "value": 1
         },
         {
@@ -87,7 +90,7 @@
             "value": 1
         },
         {
-            "source": 8,
+            "source": 5,
             "target": 13,
             "value": 1
         },
@@ -97,145 +100,118 @@
             "value": 1
         },
         {
-            "source": 14,
+            "source": 11,
             "target": 15,
-            "value": 1
-        },
-        {
-            "source": 7,
-            "target": 15,
-            "value": 1
-        },
-        {
-            "source": 15,
-            "target": 16,
             "value": 1
         },
         {
             "source": 13,
-            "target": 17,
+            "target": 15,
             "value": 1
         },
         {
-            "source": 15,
-            "target": 17,
-            "value": 1
-        },
-        {
-            "source": 16,
-            "target": 17,
+            "source": 14,
+            "target": 15,
             "value": 1
         }
     ],
-    "maxN": 18,
+    "maxN": 16,
     "nodes": [
         {
             "group": 1,
             "name": "0_functional_input_node",
-            "report": "/tmp/tmpo8fh1n9d/FuNP_workflow/functional_input_node/_report/report.rst",
-            "result": "/tmp/tmpo8fh1n9d/FuNP_workflow/functional_input_node/result_functional_input_node.pklz"
+            "report": "/tmp/tmpgfld3897/FuNP_workflow/functional_input_node/_report/report.rst",
+            "result": "/tmp/tmpgfld3897/FuNP_workflow/functional_input_node/result_functional_input_node.pklz"
         },
         {
             "group": 1,
-            "name": "1_de_oblique_func",
-            "report": "/tmp/tmpaw2akq2y/FuNP_workflow/de_oblique_func/_report/report.rst",
-            "result": "/tmp/tmpaw2akq2y/FuNP_workflow/de_oblique_func/result_de_oblique_func.pklz"
+            "name": "1_time_slice_correction",
+            "report": "/tmp/tmp17jf2wg1/FuNP_workflow/time_slice_correction/_report/report.rst",
+            "result": "/tmp/tmp17jf2wg1/FuNP_workflow/time_slice_correction/result_time_slice_correction.pklz"
         },
         {
             "group": 1,
-            "name": "2_re_orientation_func",
-            "report": "/tmp/tmpi_7pri0t/FuNP_workflow/re_orientation_func/_report/report.rst",
-            "result": "/tmp/tmpi_7pri0t/FuNP_workflow/re_orientation_func/result_re_orientation_func.pklz"
+            "name": "2_motion_correction",
+            "report": "/tmp/tmplysrca8d/FuNP_workflow/motion_correction/_report/report.rst",
+            "result": "/tmp/tmplysrca8d/FuNP_workflow/motion_correction/result_motion_correction.pklz"
         },
         {
             "group": 1,
-            "name": "3_time_slice_correction",
-            "report": "/tmp/tmpz8lu_jm_/FuNP_workflow/time_slice_correction/_report/report.rst",
-            "result": "/tmp/tmpz8lu_jm_/FuNP_workflow/time_slice_correction/result_time_slice_correction.pklz"
+            "name": "3_fslsplit",
+            "report": "/tmp/tmp3km60ogh/FuNP_workflow/fslsplit/_report/report.rst",
+            "result": "/tmp/tmp3km60ogh/FuNP_workflow/fslsplit/result_fslsplit.pklz"
         },
         {
             "group": 1,
-            "name": "4_motion_correction",
-            "report": "/tmp/tmprjcucmyd/FuNP_workflow/motion_correction/_report/report.rst",
-            "result": "/tmp/tmprjcucmyd/FuNP_workflow/motion_correction/result_motion_correction.pklz"
+            "name": "4_non_brain_removal_BET_func",
+            "report": "/tmp/tmp5v63m_gp/FuNP_workflow/non_brain_removal_BET_func/_report/report.rst",
+            "result": "/tmp/tmp5v63m_gp/FuNP_workflow/non_brain_removal_BET_func/result_non_brain_removal_BET_func.pklz"
         },
         {
             "group": 1,
-            "name": "5_fslsplit",
-            "report": "/tmp/tmpoay83t2u/FuNP_workflow/fslsplit/_report/report.rst",
-            "result": "/tmp/tmpoay83t2u/FuNP_workflow/fslsplit/result_fslsplit.pklz"
+            "name": "5_fslmerge",
+            "report": "/tmp/tmpt37ii84q/FuNP_workflow/fslmerge/_report/report.rst",
+            "result": "/tmp/tmpt37ii84q/FuNP_workflow/fslmerge/result_fslmerge.pklz"
         },
         {
             "group": 1,
-            "name": "6_non_brain_removal_BET_func",
-            "report": "/tmp/tmpst9zd7pa/FuNP_workflow/non_brain_removal_BET_func/_report/report.rst",
-            "result": "/tmp/tmpst9zd7pa/FuNP_workflow/non_brain_removal_BET_func/result_non_brain_removal_BET_func.pklz"
+            "name": "6_non_brain_removal_BET_mean",
+            "report": "/tmp/tmp7jvgghfz/FuNP_workflow/non_brain_removal_BET_mean/_report/report.rst",
+            "result": "/tmp/tmp7jvgghfz/FuNP_workflow/non_brain_removal_BET_mean/result_non_brain_removal_BET_mean.pklz"
         },
         {
             "group": 1,
-            "name": "7_fslmerge",
-            "report": "/tmp/tmp4gu33n6z/FuNP_workflow/fslmerge/_report/report.rst",
-            "result": "/tmp/tmp4gu33n6z/FuNP_workflow/fslmerge/result_fslmerge.pklz"
+            "name": "7_structual_input_node",
+            "report": "/tmp/tmp4k0ykdcb/FuNP_workflow/structual_input_node/_report/report.rst",
+            "result": "/tmp/tmp4k0ykdcb/FuNP_workflow/structual_input_node/result_structual_input_node.pklz"
         },
         {
             "group": 1,
-            "name": "8_non_brain_removal_BET_mean",
-            "report": "/tmp/tmp6vl39kqq/FuNP_workflow/non_brain_removal_BET_mean/_report/report.rst",
-            "result": "/tmp/tmp6vl39kqq/FuNP_workflow/non_brain_removal_BET_mean/result_non_brain_removal_BET_mean.pklz"
+            "name": "8_de_oblique_struct",
+            "report": "/tmp/tmpwl_mskga/FuNP_workflow/de_oblique_struct/_report/report.rst",
+            "result": "/tmp/tmpwl_mskga/FuNP_workflow/de_oblique_struct/result_de_oblique_struct.pklz"
         },
         {
             "group": 1,
-            "name": "9_structual_input_node",
-            "report": "/tmp/tmpwisobjt9/FuNP_workflow/structual_input_node/_report/report.rst",
-            "result": "/tmp/tmpwisobjt9/FuNP_workflow/structual_input_node/result_structual_input_node.pklz"
+            "name": "9_re_orientation_struct",
+            "report": "/tmp/tmpjag83sd0/FuNP_workflow/re_orientation_struct/_report/report.rst",
+            "result": "/tmp/tmpjag83sd0/FuNP_workflow/re_orientation_struct/result_re_orientation_struct.pklz"
         },
         {
             "group": 1,
-            "name": "10_de_oblique_struct",
-            "report": "/tmp/tmpg9y6dsd9/FuNP_workflow/de_oblique_struct/_report/report.rst",
-            "result": "/tmp/tmpg9y6dsd9/FuNP_workflow/de_oblique_struct/result_de_oblique_struct.pklz"
+            "name": "10_non_brain_removal_BET_struct",
+            "report": "/tmp/tmpx5k1tne9/FuNP_workflow/non_brain_removal_BET_struct/_report/report.rst",
+            "result": "/tmp/tmpx5k1tne9/FuNP_workflow/non_brain_removal_BET_struct/result_non_brain_removal_BET_struct.pklz"
         },
         {
             "group": 1,
-            "name": "11_re_orientation_struct",
-            "report": "/tmp/tmp64wa9nyw/FuNP_workflow/re_orientation_struct/_report/report.rst",
-            "result": "/tmp/tmp64wa9nyw/FuNP_workflow/re_orientation_struct/result_re_orientation_struct.pklz"
+            "name": "11_coregister",
+            "report": "/tmp/tmpajgssnt7/FuNP_workflow/coregister/_report/report.rst",
+            "result": "/tmp/tmpajgssnt7/FuNP_workflow/coregister/result_coregister.pklz"
         },
         {
             "group": 1,
-            "name": "12_non_brain_removal_BET_struct",
-            "report": "/tmp/tmpoqdt_6bp/FuNP_workflow/non_brain_removal_BET_struct/_report/report.rst",
-            "result": "/tmp/tmpoqdt_6bp/FuNP_workflow/non_brain_removal_BET_struct/result_non_brain_removal_BET_struct.pklz"
+            "name": "12_segment",
+            "report": "/tmp/tmpeok5_iph/FuNP_workflow/segment/_report/report.rst",
+            "result": "/tmp/tmpeok5_iph/FuNP_workflow/segment/result_segment.pklz"
         },
         {
             "group": 1,
-            "name": "13_coregister",
-            "report": "/tmp/tmp_qk74pj1/FuNP_workflow/coregister/_report/report.rst",
-            "result": "/tmp/tmp_qk74pj1/FuNP_workflow/coregister/result_coregister.pklz"
+            "name": "13_normalize",
+            "report": "/tmp/tmp4pixfp4q/FuNP_workflow/normalize/_report/report.rst",
+            "result": "/tmp/tmp4pixfp4q/FuNP_workflow/normalize/result_normalize.pklz"
         },
         {
             "group": 1,
-            "name": "14_segment",
-            "report": "/tmp/tmpg1_uhwp_/FuNP_workflow/segment/_report/report.rst",
-            "result": "/tmp/tmpg1_uhwp_/FuNP_workflow/segment/result_segment.pklz"
+            "name": "14_smooth",
+            "report": "/tmp/tmp3kh9jvzq/FuNP_workflow/smooth/_report/report.rst",
+            "result": "/tmp/tmp3kh9jvzq/FuNP_workflow/smooth/result_smooth.pklz"
         },
         {
             "group": 1,
-            "name": "15_normalize",
-            "report": "/tmp/tmp11lxihfz/FuNP_workflow/normalize/_report/report.rst",
-            "result": "/tmp/tmp11lxihfz/FuNP_workflow/normalize/result_normalize.pklz"
-        },
-        {
-            "group": 1,
-            "name": "16_smooth",
-            "report": "/tmp/tmpwbvv7fk5/FuNP_workflow/smooth/_report/report.rst",
-            "result": "/tmp/tmpwbvv7fk5/FuNP_workflow/smooth/result_smooth.pklz"
-        },
-        {
-            "group": 1,
-            "name": "17_output_node",
-            "report": "/tmp/tmpsmmevuai/FuNP_workflow/output_node/_report/report.rst",
-            "result": "/tmp/tmpsmmevuai/FuNP_workflow/output_node/result_output_node.pklz"
+            "name": "15_output_node",
+            "report": "/tmp/tmp9e6n293w/FuNP_workflow/output_node/_report/report.rst",
+            "result": "/tmp/tmp9e6n293w/FuNP_workflow/output_node/result_output_node.pklz"
         }
     ]
 }

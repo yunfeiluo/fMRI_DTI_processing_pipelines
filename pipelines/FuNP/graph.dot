@@ -1,8 +1,6 @@
 digraph FuNP_workflow{
   label="FuNP_workflow";
   FuNP_workflow_functional_input_node[label="functional_input_node (io)"];
-  FuNP_workflow_de_oblique_func[label="de_oblique_func (afni)"];
-  FuNP_workflow_re_orientation_func[label="re_orientation_func (afni)"];
   FuNP_workflow_time_slice_correction[label="time_slice_correction (fsl)"];
   FuNP_workflow_motion_correction[label="motion_correction (fsl)"];
   FuNP_workflow_fslsplit[label="fslsplit (fsl)"];
@@ -18,9 +16,7 @@ digraph FuNP_workflow{
   FuNP_workflow_normalize[label="normalize (spm)"];
   FuNP_workflow_smooth[label="smooth (spm)"];
   FuNP_workflow_output_node[label="output_node (io)"];
-  FuNP_workflow_functional_input_node -> FuNP_workflow_de_oblique_func;
-  FuNP_workflow_de_oblique_func -> FuNP_workflow_re_orientation_func;
-  FuNP_workflow_re_orientation_func -> FuNP_workflow_time_slice_correction;
+  FuNP_workflow_functional_input_node -> FuNP_workflow_time_slice_correction;
   FuNP_workflow_time_slice_correction -> FuNP_workflow_motion_correction;
   FuNP_workflow_motion_correction -> FuNP_workflow_non_brain_removal_BET_mean;
   FuNP_workflow_motion_correction -> FuNP_workflow_fslsplit;

@@ -10,137 +10,121 @@
         "imports": [
             "00_functional_input_node"
         ],
-        "name": "01_de_oblique_func",
+        "name": "01_time_slice_correction",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "01_de_oblique_func"
+            "01_time_slice_correction"
         ],
-        "name": "02_re_orientation_func",
+        "name": "02_motion_correction",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "02_re_orientation_func"
+            "02_motion_correction"
         ],
-        "name": "03_time_slice_correction",
+        "name": "03_fslsplit",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "03_time_slice_correction"
+            "03_fslsplit"
         ],
-        "name": "04_motion_correction",
+        "name": "04_non_brain_removal_BET_func",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "04_motion_correction"
+            "04_non_brain_removal_BET_func"
         ],
-        "name": "05_fslsplit",
+        "name": "05_fslmerge",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "05_fslsplit"
+            "02_motion_correction"
         ],
-        "name": "06_non_brain_removal_BET_func",
-        "size": 1
-    },
-    {
-        "group": 1,
-        "imports": [
-            "06_non_brain_removal_BET_func"
-        ],
-        "name": "07_fslmerge",
-        "size": 1
-    },
-    {
-        "group": 1,
-        "imports": [
-            "04_motion_correction"
-        ],
-        "name": "08_non_brain_removal_BET_mean",
+        "name": "06_non_brain_removal_BET_mean",
         "size": 1
     },
     {
         "group": 1,
         "imports": [],
-        "name": "09_structual_input_node",
+        "name": "07_structual_input_node",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "09_structual_input_node"
+            "07_structual_input_node"
         ],
-        "name": "10_de_oblique_struct",
+        "name": "08_de_oblique_struct",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "10_de_oblique_struct"
+            "08_de_oblique_struct"
         ],
-        "name": "11_re_orientation_struct",
+        "name": "09_re_orientation_struct",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "11_re_orientation_struct"
+            "09_re_orientation_struct"
         ],
-        "name": "12_non_brain_removal_BET_struct",
+        "name": "10_non_brain_removal_BET_struct",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "12_non_brain_removal_BET_struct",
-            "08_non_brain_removal_BET_mean"
+            "10_non_brain_removal_BET_struct",
+            "06_non_brain_removal_BET_mean"
         ],
-        "name": "13_coregister",
+        "name": "11_coregister",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "13_coregister"
+            "11_coregister"
         ],
-        "name": "14_segment",
+        "name": "12_segment",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "14_segment",
-            "07_fslmerge"
+            "12_segment",
+            "05_fslmerge"
         ],
-        "name": "15_normalize",
+        "name": "13_normalize",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "15_normalize"
+            "13_normalize"
         ],
-        "name": "16_smooth",
+        "name": "14_smooth",
         "size": 1
     },
     {
         "group": 1,
         "imports": [
-            "13_coregister",
-            "15_normalize",
-            "16_smooth"
+            "11_coregister",
+            "13_normalize",
+            "14_smooth"
         ],
-        "name": "17_output_node",
+        "name": "15_output_node",
         "size": 1
     }
 ]
