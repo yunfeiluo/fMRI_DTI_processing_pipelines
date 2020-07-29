@@ -1,0 +1,193 @@
+{
+    "groups": [
+        {
+            "name": "Group_00001",
+            "procs": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+            ],
+            "total": 14
+        }
+    ],
+    "links": [
+        {
+            "source": 7,
+            "target": 8,
+            "value": 1
+        },
+        {
+            "source": 0,
+            "target": 1,
+            "value": 1
+        },
+        {
+            "source": 1,
+            "target": 2,
+            "value": 1
+        },
+        {
+            "source": 2,
+            "target": 6,
+            "value": 1
+        },
+        {
+            "source": 2,
+            "target": 3,
+            "value": 1
+        },
+        {
+            "source": 3,
+            "target": 4,
+            "value": 1
+        },
+        {
+            "source": 4,
+            "target": 5,
+            "value": 1
+        },
+        {
+            "source": 8,
+            "target": 9,
+            "value": 1
+        },
+        {
+            "source": 6,
+            "target": 9,
+            "value": 1
+        },
+        {
+            "source": 9,
+            "target": 10,
+            "value": 1
+        },
+        {
+            "source": 10,
+            "target": 11,
+            "value": 1
+        },
+        {
+            "source": 5,
+            "target": 11,
+            "value": 1
+        },
+        {
+            "source": 11,
+            "target": 12,
+            "value": 1
+        },
+        {
+            "source": 9,
+            "target": 13,
+            "value": 1
+        },
+        {
+            "source": 11,
+            "target": 13,
+            "value": 1
+        },
+        {
+            "source": 12,
+            "target": 13,
+            "value": 1
+        }
+    ],
+    "maxN": 14,
+    "nodes": [
+        {
+            "group": 1,
+            "name": "0_functional_input_node",
+            "report": "/tmp/tmp_iof6qw8/preprocessing_workflow/functional_input_node/_report/report.rst",
+            "result": "/tmp/tmp_iof6qw8/preprocessing_workflow/functional_input_node/result_functional_input_node.pklz"
+        },
+        {
+            "group": 1,
+            "name": "1_time_slice_correction",
+            "report": "/tmp/tmp5yquedpt/preprocessing_workflow/time_slice_correction/_report/report.rst",
+            "result": "/tmp/tmp5yquedpt/preprocessing_workflow/time_slice_correction/result_time_slice_correction.pklz"
+        },
+        {
+            "group": 1,
+            "name": "2_motion_correction",
+            "report": "/tmp/tmp6iqs7642/preprocessing_workflow/motion_correction/_report/report.rst",
+            "result": "/tmp/tmp6iqs7642/preprocessing_workflow/motion_correction/result_motion_correction.pklz"
+        },
+        {
+            "group": 1,
+            "name": "3_fslsplit",
+            "report": "/tmp/tmpd90k7aps/preprocessing_workflow/fslsplit/_report/report.rst",
+            "result": "/tmp/tmpd90k7aps/preprocessing_workflow/fslsplit/result_fslsplit.pklz"
+        },
+        {
+            "group": 1,
+            "name": "4_non_brain_removal_BET_func",
+            "report": "/tmp/tmpdb2q_et_/preprocessing_workflow/non_brain_removal_BET_func/_report/report.rst",
+            "result": "/tmp/tmpdb2q_et_/preprocessing_workflow/non_brain_removal_BET_func/result_non_brain_removal_BET_func.pklz"
+        },
+        {
+            "group": 1,
+            "name": "5_fslmerge",
+            "report": "/tmp/tmp2vjx7ulf/preprocessing_workflow/fslmerge/_report/report.rst",
+            "result": "/tmp/tmp2vjx7ulf/preprocessing_workflow/fslmerge/result_fslmerge.pklz"
+        },
+        {
+            "group": 1,
+            "name": "6_non_brain_removal_BET_mean",
+            "report": "/tmp/tmp55eh178l/preprocessing_workflow/non_brain_removal_BET_mean/_report/report.rst",
+            "result": "/tmp/tmp55eh178l/preprocessing_workflow/non_brain_removal_BET_mean/result_non_brain_removal_BET_mean.pklz"
+        },
+        {
+            "group": 1,
+            "name": "7_structual_input_node",
+            "report": "/tmp/tmpme6kdlag/preprocessing_workflow/structual_input_node/_report/report.rst",
+            "result": "/tmp/tmpme6kdlag/preprocessing_workflow/structual_input_node/result_structual_input_node.pklz"
+        },
+        {
+            "group": 1,
+            "name": "8_non_brain_removal_BET_struct",
+            "report": "/tmp/tmp8_9mha6u/preprocessing_workflow/non_brain_removal_BET_struct/_report/report.rst",
+            "result": "/tmp/tmp8_9mha6u/preprocessing_workflow/non_brain_removal_BET_struct/result_non_brain_removal_BET_struct.pklz"
+        },
+        {
+            "group": 1,
+            "name": "9_coregister",
+            "report": "/tmp/tmphyxhf24l/preprocessing_workflow/coregister/_report/report.rst",
+            "result": "/tmp/tmphyxhf24l/preprocessing_workflow/coregister/result_coregister.pklz"
+        },
+        {
+            "group": 1,
+            "name": "10_segment",
+            "report": "/tmp/tmp3k684li_/preprocessing_workflow/segment/_report/report.rst",
+            "result": "/tmp/tmp3k684li_/preprocessing_workflow/segment/result_segment.pklz"
+        },
+        {
+            "group": 1,
+            "name": "11_normalize_func",
+            "report": "/tmp/tmporcx4cdi/preprocessing_workflow/normalize_func/_report/report.rst",
+            "result": "/tmp/tmporcx4cdi/preprocessing_workflow/normalize_func/result_normalize_func.pklz"
+        },
+        {
+            "group": 1,
+            "name": "12_smooth",
+            "report": "/tmp/tmppn8a7olx/preprocessing_workflow/smooth/_report/report.rst",
+            "result": "/tmp/tmppn8a7olx/preprocessing_workflow/smooth/result_smooth.pklz"
+        },
+        {
+            "group": 1,
+            "name": "13_preprocess_output_node",
+            "report": "/tmp/tmpchx886tb/preprocessing_workflow/preprocess_output_node/_report/report.rst",
+            "result": "/tmp/tmpchx886tb/preprocessing_workflow/preprocess_output_node/result_preprocess_output_node.pklz"
+        }
+    ]
+}

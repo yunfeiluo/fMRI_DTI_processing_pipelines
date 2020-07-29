@@ -1,0 +1,162 @@
+[
+    {
+        "group": 1,
+        "imports": [],
+        "name": "00_functional_input_node",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "00_functional_input_node"
+        ],
+        "name": "01_time_slice_correction",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "01_time_slice_correction"
+        ],
+        "name": "02_motion_correction",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "02_motion_correction"
+        ],
+        "name": "03_fslsplit",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "03_fslsplit"
+        ],
+        "name": "04_non_brain_removal_BET_func",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "04_non_brain_removal_BET_func"
+        ],
+        "name": "05_fslmerge",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "02_motion_correction"
+        ],
+        "name": "06_non_brain_removal_BET_mean",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [],
+        "name": "07_structual_input_node",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "07_structual_input_node"
+        ],
+        "name": "08_non_brain_removal_BET_struct",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "08_non_brain_removal_BET_struct",
+            "06_non_brain_removal_BET_mean"
+        ],
+        "name": "09_coregister",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "09_coregister"
+        ],
+        "name": "10_segment",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "05_fslmerge",
+            "10_segment"
+        ],
+        "name": "11_normalize_func",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "11_normalize_func"
+        ],
+        "name": "12_smooth",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "12_smooth"
+        ],
+        "name": "13_model_specification",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "13_model_specification"
+        ],
+        "name": "14_first_level_design",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "14_first_level_design"
+        ],
+        "name": "15_first_level_estimate",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "15_first_level_estimate"
+        ],
+        "name": "16_contrast_estimate",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "16_contrast_estimate"
+        ],
+        "name": "17_first_level_analysis_output_node",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "16_contrast_estimate"
+        ],
+        "name": "18_threshold",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "09_coregister",
+            "11_normalize_func",
+            "12_smooth"
+        ],
+        "name": "19_preprocess_output_node",
+        "size": 1
+    }
+]

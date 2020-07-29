@@ -1,0 +1,114 @@
+[
+    {
+        "group": 1,
+        "imports": [],
+        "name": "00_functional_input_node",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "00_functional_input_node"
+        ],
+        "name": "01_time_slice_correction",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "01_time_slice_correction"
+        ],
+        "name": "02_motion_correction",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "02_motion_correction"
+        ],
+        "name": "03_fslsplit",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "03_fslsplit"
+        ],
+        "name": "04_non_brain_removal_BET_func",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "04_non_brain_removal_BET_func"
+        ],
+        "name": "05_fslmerge",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "02_motion_correction"
+        ],
+        "name": "06_non_brain_removal_BET_mean",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [],
+        "name": "07_structual_input_node",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "07_structual_input_node"
+        ],
+        "name": "08_non_brain_removal_BET_struct",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "08_non_brain_removal_BET_struct",
+            "06_non_brain_removal_BET_mean"
+        ],
+        "name": "09_coregister",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "09_coregister"
+        ],
+        "name": "10_segment",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "10_segment",
+            "05_fslmerge"
+        ],
+        "name": "11_normalize_func",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "11_normalize_func"
+        ],
+        "name": "12_smooth",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "09_coregister",
+            "11_normalize_func",
+            "12_smooth"
+        ],
+        "name": "13_preprocess_output_node",
+        "size": 1
+    }
+]

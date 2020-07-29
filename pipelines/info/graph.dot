@@ -1,0 +1,55 @@
+digraph process_pipeline{
+  label="process_pipeline";
+  subgraph cluster_process_pipeline_preprocessing_workflow {
+      label="preprocessing_workflow";
+    process_pipeline_preprocessing_workflow_functional_input_node[label="functional_input_node (io)"];
+    process_pipeline_preprocessing_workflow_time_slice_correction[label="time_slice_correction (fsl)"];
+    process_pipeline_preprocessing_workflow_motion_correction[label="motion_correction (fsl)"];
+    process_pipeline_preprocessing_workflow_fslsplit[label="fslsplit (fsl)"];
+    process_pipeline_preprocessing_workflow_non_brain_removal_BET_func[label="non_brain_removal_BET_func (utility)"];
+    process_pipeline_preprocessing_workflow_fslmerge[label="fslmerge (fsl)"];
+    process_pipeline_preprocessing_workflow_non_brain_removal_BET_mean[label="non_brain_removal_BET_mean (fsl)"];
+    process_pipeline_preprocessing_workflow_structual_input_node[label="structual_input_node (io)"];
+    process_pipeline_preprocessing_workflow_non_brain_removal_BET_struct[label="non_brain_removal_BET_struct (fsl)"];
+    process_pipeline_preprocessing_workflow_coregister[label="coregister (spm)"];
+    process_pipeline_preprocessing_workflow_segment[label="segment (spm)"];
+    process_pipeline_preprocessing_workflow_normalize_func[label="normalize_func (spm)"];
+    process_pipeline_preprocessing_workflow_smooth[label="smooth (spm)"];
+    process_pipeline_preprocessing_workflow_preprocess_output_node[label="preprocess_output_node (io)"];
+    process_pipeline_preprocessing_workflow_functional_input_node -> process_pipeline_preprocessing_workflow_time_slice_correction;
+    process_pipeline_preprocessing_workflow_time_slice_correction -> process_pipeline_preprocessing_workflow_motion_correction;
+    process_pipeline_preprocessing_workflow_motion_correction -> process_pipeline_preprocessing_workflow_non_brain_removal_BET_mean;
+    process_pipeline_preprocessing_workflow_motion_correction -> process_pipeline_preprocessing_workflow_fslsplit;
+    process_pipeline_preprocessing_workflow_fslsplit -> process_pipeline_preprocessing_workflow_non_brain_removal_BET_func;
+    process_pipeline_preprocessing_workflow_non_brain_removal_BET_func -> process_pipeline_preprocessing_workflow_fslmerge;
+    process_pipeline_preprocessing_workflow_fslmerge -> process_pipeline_preprocessing_workflow_normalize_func;
+    process_pipeline_preprocessing_workflow_non_brain_removal_BET_mean -> process_pipeline_preprocessing_workflow_coregister;
+    process_pipeline_preprocessing_workflow_structual_input_node -> process_pipeline_preprocessing_workflow_non_brain_removal_BET_struct;
+    process_pipeline_preprocessing_workflow_non_brain_removal_BET_struct -> process_pipeline_preprocessing_workflow_coregister;
+    process_pipeline_preprocessing_workflow_coregister -> process_pipeline_preprocessing_workflow_segment;
+    process_pipeline_preprocessing_workflow_coregister -> process_pipeline_preprocessing_workflow_preprocess_output_node;
+    process_pipeline_preprocessing_workflow_segment -> process_pipeline_preprocessing_workflow_normalize_func;
+    process_pipeline_preprocessing_workflow_normalize_func -> process_pipeline_preprocessing_workflow_smooth;
+    process_pipeline_preprocessing_workflow_normalize_func -> process_pipeline_preprocessing_workflow_preprocess_output_node;
+    process_pipeline_preprocessing_workflow_smooth -> process_pipeline_preprocessing_workflow_preprocess_output_node;
+  }
+  subgraph cluster_process_pipeline_first_level_analysis_workflow {
+      label="first_level_analysis_workflow";
+    process_pipeline_first_level_analysis_workflow_model_specification[label="model_specification (modelgen)"];
+    process_pipeline_first_level_analysis_workflow_first_level_design[label="first_level_design (spm)"];
+    process_pipeline_first_level_analysis_workflow_first_level_estimate[label="first_level_estimate (spm)"];
+    process_pipeline_first_level_analysis_workflow_contrast_estimate[label="contrast_estimate (spm)"];
+    process_pipeline_first_level_analysis_workflow_first_level_analysis_output_node[label="first_level_analysis_output_node (io)"];
+    process_pipeline_first_level_analysis_workflow_threshold[label="threshold (spm)"];
+    process_pipeline_first_level_analysis_workflow_model_specification -> process_pipeline_first_level_analysis_workflow_first_level_design;
+    process_pipeline_first_level_analysis_workflow_first_level_design -> process_pipeline_first_level_analysis_workflow_first_level_estimate;
+    process_pipeline_first_level_analysis_workflow_first_level_estimate -> process_pipeline_first_level_analysis_workflow_contrast_estimate;
+    process_pipeline_first_level_analysis_workflow_first_level_estimate -> process_pipeline_first_level_analysis_workflow_contrast_estimate;
+    process_pipeline_first_level_analysis_workflow_first_level_estimate -> process_pipeline_first_level_analysis_workflow_contrast_estimate;
+    process_pipeline_first_level_analysis_workflow_contrast_estimate -> process_pipeline_first_level_analysis_workflow_threshold;
+    process_pipeline_first_level_analysis_workflow_contrast_estimate -> process_pipeline_first_level_analysis_workflow_threshold;
+    process_pipeline_first_level_analysis_workflow_contrast_estimate -> process_pipeline_first_level_analysis_workflow_first_level_analysis_output_node;
+    process_pipeline_first_level_analysis_workflow_contrast_estimate -> process_pipeline_first_level_analysis_workflow_first_level_analysis_output_node;
+  }
+  process_pipeline_preprocessing_workflow_smooth -> process_pipeline_first_level_analysis_workflow_model_specification;
+}
