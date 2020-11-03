@@ -1,0 +1,15 @@
+run image:
+docker run -it --rm nipype/nipype
+-it: interact
+--rm: remove container after exit
+
+mount
+docker run -it --rm -v mount-which-folder:/mount-to-which-folder（e.g. /mnt） nipype/nipype
+
+e.g.
+docker run -it --rm -v e:/program/fMRI/dev:/mnt nipype/nipype
+docker run -it --rm -v /home/yunfeiluo:/mnt nipype/nipype
+
+
+test:
+python -c "import nipype; print(nipype.__version__)"
