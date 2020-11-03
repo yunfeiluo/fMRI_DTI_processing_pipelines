@@ -10,7 +10,8 @@ fMRI data processing pipelines
 - normalization  
 ## DTI processing pipeline 
 - normalization
-- fiber tracking
+- DIPY fiber tracking
+- FDT tracktography pipeline
 
 # dependencies 
 - nipype, https://github.com/nipy/nipype 
