@@ -1,0 +1,36 @@
+digraph preprocess_workflow{
+  label="preprocess_workflow";
+  preprocess_workflow_functional_input_node[label="functional_input_node (io)"];
+  preprocess_workflow_fslsplit[label="fslsplit (fsl)"];
+  preprocess_workflow_non_brain_removal_BET_func[label="non_brain_removal_BET_func (utility)"];
+  preprocess_workflow_fslmerge[label="fslmerge (fsl)"];
+  preprocess_workflow_realign_motion_correction[label="realign_motion_correction (spm)"];
+  preprocess_workflow_coregister_func_to_mni[label="coregister_func_to_mni (spm)"];
+  preprocess_workflow_segment[label="segment (spm)"];
+  preprocess_workflow_normalize_func[label="normalize_func (spm)"];
+  preprocess_workflow_smooth[label="smooth (spm)"];
+  preprocess_workflow_structual_input_node[label="structual_input_node (io)"];
+  preprocess_workflow_non_brain_removal_BET_struct[label="non_brain_removal_BET_struct (fsl)"];
+  preprocess_workflow_coregister_struct_to_mni[label="coregister_struct_to_mni (spm)"];
+  preprocess_workflow_segment_struct[label="segment_struct (spm)"];
+  preprocess_workflow_normalize_struct[label="normalize_struct (spm)"];
+  preprocess_workflow_preprocess_output_node[label="preprocess_output_node (io)"];
+  preprocess_workflow_functional_input_node -> preprocess_workflow_fslsplit;
+  preprocess_workflow_fslsplit -> preprocess_workflow_non_brain_removal_BET_func;
+  preprocess_workflow_non_brain_removal_BET_func -> preprocess_workflow_fslmerge;
+  preprocess_workflow_fslmerge -> preprocess_workflow_realign_motion_correction;
+  preprocess_workflow_realign_motion_correction -> preprocess_workflow_coregister_func_to_mni;
+  preprocess_workflow_realign_motion_correction -> preprocess_workflow_coregister_func_to_mni;
+  preprocess_workflow_coregister_func_to_mni -> preprocess_workflow_segment;
+  preprocess_workflow_coregister_func_to_mni -> preprocess_workflow_normalize_func;
+  preprocess_workflow_segment -> preprocess_workflow_normalize_func;
+  preprocess_workflow_normalize_func -> preprocess_workflow_smooth;
+  preprocess_workflow_normalize_func -> preprocess_workflow_preprocess_output_node;
+  preprocess_workflow_smooth -> preprocess_workflow_preprocess_output_node;
+  preprocess_workflow_structual_input_node -> preprocess_workflow_non_brain_removal_BET_struct;
+  preprocess_workflow_non_brain_removal_BET_struct -> preprocess_workflow_coregister_struct_to_mni;
+  preprocess_workflow_coregister_struct_to_mni -> preprocess_workflow_segment_struct;
+  preprocess_workflow_coregister_struct_to_mni -> preprocess_workflow_normalize_struct;
+  preprocess_workflow_segment_struct -> preprocess_workflow_normalize_struct;
+  preprocess_workflow_normalize_struct -> preprocess_workflow_preprocess_output_node;
+}

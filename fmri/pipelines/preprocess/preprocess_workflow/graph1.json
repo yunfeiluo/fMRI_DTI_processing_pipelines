@@ -1,0 +1,205 @@
+{
+    "groups": [
+        {
+            "name": "Group_00001",
+            "procs": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+            ],
+            "total": 15
+        }
+    ],
+    "links": [
+        {
+            "source": 9,
+            "target": 10,
+            "value": 1
+        },
+        {
+            "source": 10,
+            "target": 11,
+            "value": 1
+        },
+        {
+            "source": 11,
+            "target": 12,
+            "value": 1
+        },
+        {
+            "source": 12,
+            "target": 13,
+            "value": 1
+        },
+        {
+            "source": 11,
+            "target": 13,
+            "value": 1
+        },
+        {
+            "source": 0,
+            "target": 1,
+            "value": 1
+        },
+        {
+            "source": 1,
+            "target": 2,
+            "value": 1
+        },
+        {
+            "source": 2,
+            "target": 3,
+            "value": 1
+        },
+        {
+            "source": 3,
+            "target": 4,
+            "value": 1
+        },
+        {
+            "source": 4,
+            "target": 5,
+            "value": 1
+        },
+        {
+            "source": 5,
+            "target": 6,
+            "value": 1
+        },
+        {
+            "source": 6,
+            "target": 7,
+            "value": 1
+        },
+        {
+            "source": 5,
+            "target": 7,
+            "value": 1
+        },
+        {
+            "source": 7,
+            "target": 8,
+            "value": 1
+        },
+        {
+            "source": 7,
+            "target": 14,
+            "value": 1
+        },
+        {
+            "source": 8,
+            "target": 14,
+            "value": 1
+        },
+        {
+            "source": 13,
+            "target": 14,
+            "value": 1
+        }
+    ],
+    "maxN": 15,
+    "nodes": [
+        {
+            "group": 1,
+            "name": "0_functional_input_node",
+            "report": "/tmp/tmp20f18tuu/preprocess_workflow/functional_input_node/_report/report.rst",
+            "result": "/tmp/tmp20f18tuu/preprocess_workflow/functional_input_node/result_functional_input_node.pklz"
+        },
+        {
+            "group": 1,
+            "name": "1_fslsplit",
+            "report": "/tmp/tmpgznuupvu/preprocess_workflow/fslsplit/_report/report.rst",
+            "result": "/tmp/tmpgznuupvu/preprocess_workflow/fslsplit/result_fslsplit.pklz"
+        },
+        {
+            "group": 1,
+            "name": "2_non_brain_removal_BET_func",
+            "report": "/tmp/tmpyfncexfe/preprocess_workflow/non_brain_removal_BET_func/_report/report.rst",
+            "result": "/tmp/tmpyfncexfe/preprocess_workflow/non_brain_removal_BET_func/result_non_brain_removal_BET_func.pklz"
+        },
+        {
+            "group": 1,
+            "name": "3_fslmerge",
+            "report": "/tmp/tmpp574n458/preprocess_workflow/fslmerge/_report/report.rst",
+            "result": "/tmp/tmpp574n458/preprocess_workflow/fslmerge/result_fslmerge.pklz"
+        },
+        {
+            "group": 1,
+            "name": "4_realign_motion_correction",
+            "report": "/tmp/tmp8smx8jiv/preprocess_workflow/realign_motion_correction/_report/report.rst",
+            "result": "/tmp/tmp8smx8jiv/preprocess_workflow/realign_motion_correction/result_realign_motion_correction.pklz"
+        },
+        {
+            "group": 1,
+            "name": "5_coregister_func_to_mni",
+            "report": "/tmp/tmpzs38xnm3/preprocess_workflow/coregister_func_to_mni/_report/report.rst",
+            "result": "/tmp/tmpzs38xnm3/preprocess_workflow/coregister_func_to_mni/result_coregister_func_to_mni.pklz"
+        },
+        {
+            "group": 1,
+            "name": "6_segment",
+            "report": "/tmp/tmpk1krylza/preprocess_workflow/segment/_report/report.rst",
+            "result": "/tmp/tmpk1krylza/preprocess_workflow/segment/result_segment.pklz"
+        },
+        {
+            "group": 1,
+            "name": "7_normalize_func",
+            "report": "/tmp/tmpzmq73bx3/preprocess_workflow/normalize_func/_report/report.rst",
+            "result": "/tmp/tmpzmq73bx3/preprocess_workflow/normalize_func/result_normalize_func.pklz"
+        },
+        {
+            "group": 1,
+            "name": "8_smooth",
+            "report": "/tmp/tmpkeye1t6r/preprocess_workflow/smooth/_report/report.rst",
+            "result": "/tmp/tmpkeye1t6r/preprocess_workflow/smooth/result_smooth.pklz"
+        },
+        {
+            "group": 1,
+            "name": "9_structual_input_node",
+            "report": "/tmp/tmp30afbumm/preprocess_workflow/structual_input_node/_report/report.rst",
+            "result": "/tmp/tmp30afbumm/preprocess_workflow/structual_input_node/result_structual_input_node.pklz"
+        },
+        {
+            "group": 1,
+            "name": "10_non_brain_removal_BET_struct",
+            "report": "/tmp/tmp0qoysqgr/preprocess_workflow/non_brain_removal_BET_struct/_report/report.rst",
+            "result": "/tmp/tmp0qoysqgr/preprocess_workflow/non_brain_removal_BET_struct/result_non_brain_removal_BET_struct.pklz"
+        },
+        {
+            "group": 1,
+            "name": "11_coregister_struct_to_mni",
+            "report": "/tmp/tmp0qledzvx/preprocess_workflow/coregister_struct_to_mni/_report/report.rst",
+            "result": "/tmp/tmp0qledzvx/preprocess_workflow/coregister_struct_to_mni/result_coregister_struct_to_mni.pklz"
+        },
+        {
+            "group": 1,
+            "name": "12_segment_struct",
+            "report": "/tmp/tmpgo2f4sys/preprocess_workflow/segment_struct/_report/report.rst",
+            "result": "/tmp/tmpgo2f4sys/preprocess_workflow/segment_struct/result_segment_struct.pklz"
+        },
+        {
+            "group": 1,
+            "name": "13_normalize_struct",
+            "report": "/tmp/tmp_n9x7nu0/preprocess_workflow/normalize_struct/_report/report.rst",
+            "result": "/tmp/tmp_n9x7nu0/preprocess_workflow/normalize_struct/result_normalize_struct.pklz"
+        },
+        {
+            "group": 1,
+            "name": "14_preprocess_output_node",
+            "report": "/tmp/tmp8eftcizs/preprocess_workflow/preprocess_output_node/_report/report.rst",
+            "result": "/tmp/tmp8eftcizs/preprocess_workflow/preprocess_output_node/result_preprocess_output_node.pklz"
+        }
+    ]
+}

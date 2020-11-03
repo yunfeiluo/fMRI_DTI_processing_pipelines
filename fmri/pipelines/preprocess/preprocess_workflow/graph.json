@@ -1,0 +1,122 @@
+[
+    {
+        "group": 1,
+        "imports": [],
+        "name": "00_functional_input_node",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "00_functional_input_node"
+        ],
+        "name": "01_fslsplit",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "01_fslsplit"
+        ],
+        "name": "02_non_brain_removal_BET_func",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "02_non_brain_removal_BET_func"
+        ],
+        "name": "03_fslmerge",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "03_fslmerge"
+        ],
+        "name": "04_realign_motion_correction",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "04_realign_motion_correction"
+        ],
+        "name": "05_coregister_func_to_mni",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "05_coregister_func_to_mni"
+        ],
+        "name": "06_segment",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "06_segment",
+            "05_coregister_func_to_mni"
+        ],
+        "name": "07_normalize_func",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "07_normalize_func"
+        ],
+        "name": "08_smooth",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [],
+        "name": "09_structual_input_node",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "09_structual_input_node"
+        ],
+        "name": "10_non_brain_removal_BET_struct",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "10_non_brain_removal_BET_struct"
+        ],
+        "name": "11_coregister_struct_to_mni",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "11_coregister_struct_to_mni"
+        ],
+        "name": "12_segment_struct",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "12_segment_struct",
+            "11_coregister_struct_to_mni"
+        ],
+        "name": "13_normalize_struct",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "07_normalize_func",
+            "08_smooth",
+            "13_normalize_struct"
+        ],
+        "name": "14_preprocess_output_node",
+        "size": 1
+    }
+]
